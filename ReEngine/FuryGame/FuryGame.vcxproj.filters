@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="warrior">
+      <UniqueIdentifier>{8fdb5acb-e2c5-4b79-b6e2-306bc6f671f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ritual">
+      <UniqueIdentifier>{48081bfb-7170-4095-a6c4-faf4c7388f38}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FuryMain.cpp" />
+    <ClCompile Include="Layers.cpp" />
+    <ClCompile Include="Warrior\WarriorPlayer.cpp">
+      <Filter>warrior</Filter>
+    </ClCompile>
+    <ClCompile Include="Warrior\Villager.cpp">
+      <Filter>warrior</Filter>
+    </ClCompile>
+    <ClCompile Include="Ritual\RitualSign.cpp">
+      <Filter>Ritual</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Layers.h" />
+    <ClInclude Include="Warrior\WarriorPlayer.h">
+      <Filter>warrior</Filter>
+    </ClInclude>
+    <ClInclude Include="Warrior\Villager.h">
+      <Filter>warrior</Filter>
+    </ClInclude>
+    <ClInclude Include="Ritual\RitualSign.h">
+      <Filter>Ritual</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Warrior\model_body.txt">
+      <Filter>warrior</Filter>
+    </Text>
+    <Text Include="Warrior\model_leftArm.txt">
+      <Filter>warrior</Filter>
+    </Text>
+    <Text Include="Warrior\model_leftHand.txt">
+      <Filter>warrior</Filter>
+    </Text>
+    <Text Include="Warrior\model_rightArm.txt">
+      <Filter>warrior</Filter>
+    </Text>
+    <Text Include="Warrior\model_rightHand.txt">
+      <Filter>warrior</Filter>
+    </Text>
+    <Text Include="Warrior\model_Full.txt">
+      <Filter>warrior</Filter>
+    </Text>
+    <Text Include="anim_swingWeaponLeft.txt">
+      <Filter>warrior</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

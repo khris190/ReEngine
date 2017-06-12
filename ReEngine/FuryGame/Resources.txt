@@ -1,0 +1,15 @@
+< 
+	prepathGraphics =..\\Resources\\Graphics\\; 
+	prepathFont =..\\Resources\\Fonts\\;
+>
+		
+	< type =texture; path =Terrain\\grass.png;		id =100>
+
+	< type =texture; path =shiveil\\arm2dk.png;		id =200>
+	< type =texture; path =shiveil\\armdk.png;		id =201>
+	< type =texture; path =shiveil\\headdk--.png;	id =202>
+	< type =texture; path =shiveil\\shieldDk.png;	id =203>
+	< type =texture; path =shiveil\\weaponDk.png;	id =204>
+
+	< type =font;	 path =Akv.ttf;					id =1>
+<\>
