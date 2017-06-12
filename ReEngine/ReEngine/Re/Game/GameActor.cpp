@@ -8,7 +8,7 @@ namespace Game
 	{
 		setAlive(true);
 		rigidbody = nullptr;
-	
+
 		/// Actor has no owner
 		setOwner(this);
 	}
@@ -58,7 +58,7 @@ namespace Game
 
 	void Actor::destroyRigidbody()
 	{
-		rigidbody->GetWorld()->DestroyBody(rigidbody); 
+		rigidbody->GetWorld()->DestroyBody(rigidbody);
 		rigidbody->SetUserData(nullptr);
 		rigidbody = nullptr;
 	}
@@ -72,8 +72,8 @@ namespace Game
 		//// update without interpolation
 		//// TODO make define which will be able to turn off/on interpolation
 		/// update rigidbody transform
-		rigidbody->SetTransform(	getPosition()* toB2Position,
-									getRotation().asRadian() );
+		rigidbody->SetTransform(getPosition()* toB2Position,
+			getRotation().asRadian());
 	}
 
 	void Actor::updateTransform(const Vector2D & originOffset)
@@ -81,8 +81,8 @@ namespace Game
 		assert(isRigidbodyCreated());
 
 		Transformable::setPosition((Vector2D)rigidbody->GetPosition() * toSfPosition);
-		Transformable::setRotation( Radian(rigidbody->GetAngle() ).asDegree() );
-	
+		Transformable::setRotation(Radian(rigidbody->GetAngle()).asDegree());
+
 	}
 
 	void Actor::updateGraphics(Transformable & transformable)
@@ -97,6 +97,13 @@ namespace Game
 	{
 		modelDef.posNoRot = getPosition();
 		modelDef.rot = getRotation();
+	}
+
+	void Actor::setActive(bool s)
+	{
+		Efect::Base::activated = s;
+		if (isRigidbodyCreated())
+			getRigidbody().SetActive(s);
 	}
 
 

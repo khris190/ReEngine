@@ -10,19 +10,19 @@
 #include "Warrior\Villager.h"
 #include "Ritual\RitualSign.h"
 
-void addBackground(const Vector2D& position = Vector2D() )
+void addBackground(const Vector2D& position = Vector2D())
 {
-	auto background = Game::world.addActor(new Game::Actor , Game::Layers::background);
+	auto background = Game::world.addActor(new Game::Actor, Game::Layers::background);
 
 	background->setPosition(position);
-	
-	auto efModel = background->addEfect(new Efect::Model((TsId)100u) )
-		->setScale(Vector2D(5.f,5.f));
+
+	auto efModel = background->addEfect(new Efect::Model((TsId)100u))
+		->setScale(Vector2D(5.f, 5.f));
 }
 Villager* addVillager(const Vector2D& position)
 {
-	auto villager = Game::world.addActor(new Villager , Game::Layers::character);
-	villager->getRigidbody().SetTransform(position*toB2Position, randRange(Angle::zero, Angle::full).asRadian() );
+	auto villager = Game::world.addActor(new Villager, Game::Layers::character);
+	villager->getRigidbody().SetTransform(position*toB2Position, randRange(Angle::zero, Angle::full).asRadian());
 
 	return villager;
 }
@@ -51,18 +51,18 @@ void initKeys()
 Game::State* createState()
 {
 	return new Game::StateLambda(
-	[]() /// init
+		[]() /// init
 	{
 		Game::Layers::init();
-		cam.setScale(1.25f);
+		cam.setScale(2.f);
 		addBackground();
-		Game::world.addActor(new WarriorPlayer() , Game::Layers::character);
+		Game::world.addActor(new WarriorPlayer(), Game::Layers::character);
 
 		for (int i = 0; i < 5; ++i)
-			addVillager(Vector2D(0,randRange(100.f,1500.f)).getRotated(randRange(Angle::zero, Angle::full)));
+			addVillager(Vector2D(0, randRange(100.f, 1500.f)).getRotated(randRange(Angle::zero, Angle::full)));
 	},
-	
-	[](sf::Time dt)->Game::State*
+
+		[](sf::Time dt)->Game::State*
 	{
 		Game::world.onUpdate(dt);
 		cam.display(wnd);
@@ -70,7 +70,7 @@ Game::State* createState()
 			return createState();
 		return nullptr;
 	}
-	);	
+	);
 
 }
 
@@ -87,27 +87,16 @@ void init()
 	cam.setDarkness(1);
 	cam.setBackgroundColor(Color(200, 200, 200));
 
-	//res.textures[0u] = new Texture();
-	//res.deserialise("Resources.txt");
-
-	//initKeys();
-
-	//Game::stateManager.setState( createState() );
 	res.textures.acquire(0u, thor::ResourceLoader<Texture>(
 		[]()->unique_ptr<Texture> {return unique_ptr<Texture>(new Texture()); }, ""));
-	
 	res.deserialise("Resources.txt");
 
-	//map<string, shared_ptr<Gui::Base> > guiMap;
-	//Gui::Base::loaded = &guiMap;
-	//Gui::gui.deserialise("Gui.txt");
+
+	initKeys();
 
 
-	Game::stateManager.setState(
-		new Game::StateLambda(
-			[&]()
-	{
-	}));
+
+	Game::stateManager.setState( createState() );
 }
 
 
@@ -116,12 +105,12 @@ void update()
 	static Clock clock, performanceClock;
 	performanceClock.restart();
 	Game::stateManager.onUpdate(clock.getElapsedTime());
-	
+
 
 	sf::Text txt;
 	{
 		static int32 average = performanceClock.getElapsedTime().asMilliseconds();
-		average =  (average*7 + performanceClock.getElapsedTime().asMilliseconds()) *0.125 ;
+		average = (average * 7 + performanceClock.getElapsedTime().asMilliseconds()) *0.125;
 
 		txt.setPosition(0, 0);
 		txt.setFont(res.fonts[1]);
@@ -129,7 +118,7 @@ void update()
 		txt.setFillColor(Color::White);
 		txt.setStyle(sf::Text::Bold);
 		std::stringstream ss;
-		ss << "ms: " << average ;
+		ss << "ms: " << average;
 		txt.setString(ss.str());
 	}
 	clock.restart();

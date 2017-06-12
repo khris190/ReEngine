@@ -36,7 +36,7 @@ namespace Game
 		{
 			return !readyToRemove;
 		}
-		void setAlive( bool s) 
+		void setAlive(bool s)
 		{
 			readyToRemove = !s;
 		}
@@ -45,7 +45,7 @@ namespace Game
 		/// returns whether the object can be destroyed
 		virtual bool onDeath(sf::Time dt) override;
 
-		
+
 		/// When the object collides with other those events are send
 		/// taken actor is the other one with collision appeared
 		/// contact is all collision data sended by box2d ( for more info look into box2d documentation )
@@ -58,7 +58,7 @@ namespace Game
 
 	public:
 		/// creates rigidbody of the actor ( for more info look into box2d documentation)
-		void createRigidbody( const b2BodyDef& def);
+		void createRigidbody(const b2BodyDef& def);
 		/// returns rigidbody assigned to the Actor
 		/// @Warring call this function only if you are sure body has been created
 		b2Body& getRigidbody() { assert(isRigidbodyCreated()); return *rigidbody; }
@@ -83,19 +83,26 @@ namespace Game
 	public:
 		/// overrided operators
 		__forceinline Vector2D getPosition() const { return Transformable::getPosition(); }
-		__forceinline Angle getRotation() const{return Degree( Transformable::getRotation()); }
+		__forceinline Angle getRotation() const { return Degree(Transformable::getRotation()); }
 		__forceinline Vector2D getScale() const { return Transformable::getScale(); }
+
+		void setActive(bool s);
+		bool isActive() { return activated; }
 
 	protected:
 
-		friend class World;		
+		friend class World;
 
 		/// rigidbody used by the actor. To get any collision events you need to have it filled;
 		b2Body *rigidbody;
 
 	private:
+		/// actor has no owner ( in terms of efect)
 		using Efect::Multi::setOwner;
 		using Efect::Multi::getOwner;
+
+		/// use set/is Active instead;
+		using Efect::Base::activated;
 	};
 
 }
