@@ -1,0 +1,2 @@
+<ts = 1; scaleX = 0.75; scaleY = 0.75; rot = 0.0 ; posX =0 >
+<\>
