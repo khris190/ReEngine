@@ -22,7 +22,7 @@ public:
 	/// list of loaded textures
 	thor::ResourceHolder< Texture, TsId> textures;
 	thor::ResourceHolder< Font, TsId> fonts;
-	thor::ResourceHolder< sf::SoundBuffer, TsId> sounds;
+	thor::ResourceHolder< SoundBuffer, TsId> sounds;
 
 	unique_ptr<Texture> createTexture(const std::string& path);
 
@@ -49,3 +49,4 @@ extern ResourceManager res;
 
 #define tsInst res.textures
 #define fontInst res.fonts
+#define soundInst res.sounds

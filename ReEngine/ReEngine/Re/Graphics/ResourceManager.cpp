@@ -36,6 +36,7 @@ void ResourceManager::deserialiseF(std::istream& file, Res::DataScriptLoader& lo
 		// heder line
 		std::string prepathGraphics = loader.loadRaw("prepathGraphics", "");
 		std::string prepathFont = loader.loadRaw("prepathFont", "");
+		std::string prepathSound = loader.loadRaw("prepathSound", "");
 
 		DATA_SCRIPT_MULTILINE(file, loader)
 		{
@@ -59,6 +60,25 @@ void ResourceManager::deserialiseF(std::istream& file, Res::DataScriptLoader& lo
 
 				}
 			}
+			else if (type == "sound")
+			{
+				std::string path = prepathSound + loader.loadRaw("path", "non_written_error");
+				TsId name = loader.load("id", 0u);
+
+				if (name == 0u)
+					std::cerr << "error: Resource >> sounds >> id = non_named\n"
+					"\tPath = " << path << "\n";
+				else
+				{//add Sound to container
+					sounds.acquire(name, thor::ResourceLoader<SoundBuffer>(
+						[=]()
+					{
+						auto sound = std::make_unique<SoundBuffer>();
+						sound->loadFromFile(path);
+						return sound;
+					}, path));
+				}
+			} 
 			else if (type == "font")
 			{
 				std::string path = prepathFont + loader.loadRaw("path", "non_written_path_error");
