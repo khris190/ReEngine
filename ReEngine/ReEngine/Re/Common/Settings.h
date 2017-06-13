@@ -3,6 +3,7 @@
 // sfml
 #include <SFML\Graphics.hpp>
 #include <SFML\Network.hpp>
+#include <SFML\Audio.hpp>
 using namespace sf;
 
 // box 2d

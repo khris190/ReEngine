@@ -11,6 +11,9 @@
     <Filter Include="Ritual">
       <UniqueIdentifier>{48081bfb-7170-4095-a6c4-faf4c7388f38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="warrior\skills">
+      <UniqueIdentifier>{2c1cecab-ebd6-4f34-a253-5ccdb52ac8ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FuryMain.cpp" />
@@ -24,6 +27,12 @@
     <ClCompile Include="Ritual\RitualSign.cpp">
       <Filter>Ritual</Filter>
     </ClCompile>
+    <ClCompile Include="Warrior\Skills\EfectSkillManager.cpp">
+      <Filter>warrior\skills</Filter>
+    </ClCompile>
+    <ClCompile Include="Warrior\Skills\EfectSkillShadowSpear.cpp">
+      <Filter>warrior\skills</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Layers.h" />
@@ -35,6 +44,12 @@
     </ClInclude>
     <ClInclude Include="Ritual\RitualSign.h">
       <Filter>Ritual</Filter>
+    </ClInclude>
+    <ClInclude Include="Warrior\Skills\EfectSkillManager.h">
+      <Filter>warrior\skills</Filter>
+    </ClInclude>
+    <ClInclude Include="Warrior\Skills\EfectSkillShadowSpear.h">
+      <Filter>warrior\skills</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

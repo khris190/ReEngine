@@ -54,7 +54,7 @@ Game::State* createState()
 		[]() /// init
 	{
 		Game::Layers::init();
-		cam.setScale(2.f);
+		cam.setScale(2.5f);
 		addBackground();
 		Game::world.addActor(new WarriorPlayer(), Game::Layers::character);
 
@@ -78,9 +78,9 @@ Game::State* createState()
 void init()
 {
 	srand((unsigned int)time(nullptr));
-	wnd.create(VideoMode(800, 600), "ReEngine");
-	wnd.setVerticalSyncEnabled(true);
-	//wnd.setFramerateLimit(30);
+	wnd.create(VideoMode(1100, 750), "ReEngine");
+	//wnd.setVerticalSyncEnabled(true);
+	wnd.setFramerateLimit(30);
 
 	cam.create(Vector2D(wnd.getSize().x, wnd.getSize().y));
 	cam.setBackgroundColor(Color(0, 0, 0));

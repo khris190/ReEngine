@@ -94,7 +94,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-network-d.lib;thor-d.lib;ReEngine.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-network-d.lib;sfml-audio-d.lib;thor-d.lib;ReEngine.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -145,12 +145,16 @@
     <ClCompile Include="FuryMain.cpp" />
     <ClCompile Include="Layers.cpp" />
     <ClCompile Include="Ritual\RitualSign.cpp" />
+    <ClCompile Include="Warrior\Skills\EfectSkillManager.cpp" />
+    <ClCompile Include="Warrior\Skills\EfectSkillShadowSpear.cpp" />
     <ClCompile Include="Warrior\Villager.cpp" />
     <ClCompile Include="Warrior\WarriorPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Layers.h" />
     <ClInclude Include="Ritual\RitualSign.h" />
+    <ClInclude Include="Warrior\Skills\EfectSkillManager.h" />
+    <ClInclude Include="Warrior\Skills\EfectSkillShadowSpear.h" />
     <ClInclude Include="Warrior\Villager.h" />
     <ClInclude Include="Warrior\WarriorPlayer.h" />
   </ItemGroup>
