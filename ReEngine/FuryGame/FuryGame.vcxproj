@@ -160,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="anim_swingWeaponLeft.txt" />
+    <Text Include="Model_blood.txt" />
     <Text Include="Resources.txt" />
     <Text Include="Warrior\model_body.txt" />
     <Text Include="Warrior\model_Full.txt" />

@@ -77,5 +77,8 @@
     <Text Include="anim_swingWeaponLeft.txt">
       <Filter>warrior</Filter>
     </Text>
+    <Text Include="Model_blood.txt">
+      <Filter>warrior</Filter>
+    </Text>
   </ItemGroup>
 </Project>

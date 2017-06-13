@@ -11,5 +11,8 @@
 	< type =texture; path =shiveil\\shieldDk.png;	id =203>
 	< type =texture; path =shiveil\\weaponDk.png;	id =204>
 
+	
+	< type =texture; path =Blood\\blood2.png;		id =300>
+
 	< type =font;	 path =Akv.ttf;					id =1>
 <\>

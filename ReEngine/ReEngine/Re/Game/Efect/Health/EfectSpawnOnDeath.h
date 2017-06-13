@@ -37,7 +37,7 @@ namespace Efect
 		/// relative to owner
 		Vector2D offset;
 		Angle angle;
-		function<Game::Layer*()> getLayer;
+		function<Game::Layer*()> getLayer{ []() {return (Game::Layer*)nullptr; } };
 	};
 
 

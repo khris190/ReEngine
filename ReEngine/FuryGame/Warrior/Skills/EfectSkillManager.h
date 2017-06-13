@@ -3,12 +3,17 @@
 
 namespace Efect
 {
+	class SkillManager;
+
 	class Skill
 	{
 	public:
 		virtual ~Skill() = default;
 		void onUpdate();
 		
+		/// called when owner is set up
+		virtual void onInit() {};
+
 		/// do a real spell execution
 		/// return true when spell is finnished
 		virtual bool execute() = 0;
@@ -20,10 +25,17 @@ namespace Efect
 
 		/// cost in soul energy payed afret usage;
 		float32 cost;
+
+		Game::Actor* getOwner() { return owner; }
+		Game::Actor* getOwner() const  { return owner; }
+
+
 	private:
 		/// tells whether the spell is at run;
 		bool atExecution{false};
+		Game::Actor* owner;
 
+		friend SkillManager;
 	};
 
 	/// skill manager for player usage
@@ -65,6 +77,9 @@ namespace Efect
 		}
 		SkillManager* addSkill(Skill* s, const initializer_list<pair<Region,Region>>& moveList)
 		{
+			s->owner = getOwner();
+			s->onInit();
+
 			skills.push_back(s);
 			for (auto it : moveList)
 			{

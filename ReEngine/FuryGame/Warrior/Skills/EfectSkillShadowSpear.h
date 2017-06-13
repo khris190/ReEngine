@@ -8,6 +8,7 @@ namespace Efect
 	public:
 		SkillShadowSpear(string _s):s(_s) {}
 		
+		virtual void onInit() override;
 		virtual bool execute() override;
 		virtual bool condition() override;
 

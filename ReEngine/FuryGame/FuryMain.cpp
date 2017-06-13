@@ -58,7 +58,7 @@ Game::State* createState()
 		addBackground();
 		Game::world.addActor(new WarriorPlayer(), Game::Layers::character);
 
-		for (int i = 0; i < 5; ++i)
+		for (int i = 0; i < 15; ++i)
 			addVillager(Vector2D(0, randRange(100.f, 1500.f)).getRotated(randRange(Angle::zero, Angle::full)));
 	},
 
