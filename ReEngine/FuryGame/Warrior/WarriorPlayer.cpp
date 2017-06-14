@@ -18,7 +18,7 @@ void WarriorPlayer::onInit()
 		->eventControllAnimation = [](Graphics::AnimationController& cont) { cont.updateReturn(); };
 
 	addEfect(new Efect::SkillManager)->setRadius({ 175,250,450 })
-		->addSkill(new Efect::SkillShadowSpear(":) 1 "), 
+		->addSkill(new Efect::SkillShadowSpear(), 
 			{
 				make_pair(1,5), make_pair(1,9) ,make_pair(1,13) ,
 				make_pair(5,9), make_pair(5,13),

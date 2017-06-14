@@ -102,9 +102,9 @@ Game::Actor* createPlayer()
 			c.updateInRange(-c.speed * (1 - efMovement->lastSpeedModificator));
 	};
 
-	actor->addEfect(new Efect::Throw(createBullet) )
-		->setOffset(Vector2D(0, -100), Angle())
-		->setLayer(Game::Layers::bullet);
+	//actor->addEfect(new Efect::Throw(createBullet) )
+	//	->setOffset(Vector2D(0, -100), Angle())
+	//	->setLayer(Game::Layers::bullet);
 
 	return actor;
 }
@@ -145,7 +145,30 @@ void initKeys()
 	actionMap["debugPhysics"] = thor::Action(sf::Keyboard::Z, thor::Action::Hold);
 
 }
+Game::State* createState()
+{
+	return new Game::StateLambda(
+		[]() /// init
+	{
+		//Game::world.addActor(new Game::Actor)->addEfect(new Efect::Sound(10))->setWhenPlaying([=]() {return actionMap["up"]; });
+	},
 
+		[](sf::Time dt)->Game::State*
+	{
+		Game::world.onUpdate(dt);
+		cam.display(wnd);
+		if (actionMap.isActive("restart"))
+			return createState();
+		return nullptr;
+	}
+	);
+
+}
+
+
+
+
+Graphics::ModelPolygon model;
 
 void init()
 {
@@ -164,31 +187,31 @@ void init()
 	res.deserialise("Resources.txt");
 
 	initKeys();
-	Game::Layers::init();
 
-	Game::stateManager.setState(new Game::StateLambda(
-		[]() /// init
-		{ 
-			Game::Actor *player = Game::world.addActor(createPlayer(), Game::Layers::character);
-			
-			for (int i = 0; i < 2; ++i)
-				Game::world.addActor(createTesterMovementBot(player), Game::Layers::character);
+	//Game::stateManager.setState(createState());
+	/*model.setLayers(4, 5)
+		->setDynamic()->setChange(sf::seconds(0.05), 5.f)
+		->setPoint(0, Vector2D(-50, -50))
+		->setPoint(1, Vector2D(50, -50))
+		->setPoint(2, Vector2D(50, 50))
+		->setPoint(3, Vector2D(-50, 50))
+		->color = Color_f(0,0,0,60)
+		;*/
 
-			for (int i = 0; i < 50; ++i)
-				Game::world.addActor(createObstacle(), Game::Layers::obstacle);
-		}
-	));
-	
+	model.deserialise("model.txt");
 }
 
 
 void update()
 {
-	static Clock clock;
+	/*static Clock clock;
 	Game::stateManager.onUpdate(clock.getElapsedTime());
 	clock.restart();
 
-	Gui::gui.update(wnd, RenderStates::Default);
+	Gui::gui.update(wnd, RenderStates::Default);*/
+	cam.display(wnd);
+	cam.draw(model);
+	//model.drawDynamic(wnd, RenderStates::Default);
 }
 void out()
 {

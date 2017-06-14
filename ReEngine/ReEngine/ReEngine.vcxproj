@@ -187,6 +187,7 @@ $(SolutionDir)\External\Box2D-master\Box2D\Lib;%(AdditionalLibraryDirectories)
     <ClCompile Include="Re\Game\Efect\Graphical\EfectFollowCamera.cpp" />
     <ClCompile Include="Re\Game\Efect\Graphical\EfectGraphicsCircle.cpp" />
     <ClCompile Include="Re\Game\Efect\Graphical\EfectGraphicsRect.cpp" />
+    <ClCompile Include="Re\Game\Efect\Graphical\EfectModelPolygon.cpp" />
     <ClCompile Include="Re\Game\Efect\Graphical\EfectParticle.cpp" />
     <ClCompile Include="Re\Game\Efect\Health\EfectDamageOnCollision.cpp" />
     <ClCompile Include="Re\Game\Efect\Health\EfectHealth.cpp" />
@@ -219,6 +220,7 @@ $(SolutionDir)\External\Box2D-master\Box2D\Lib;%(AdditionalLibraryDirectories)
     <ClCompile Include="Re\Graphics\GraphicsAnimationController.cpp" />
     <ClCompile Include="Re\Graphics\GraphicsAnimationPart.cpp" />
     <ClCompile Include="Re\Graphics\GraphicsModelDef.cpp" />
+    <ClCompile Include="Re\Graphics\GraphicsModelPolygon.cpp" />
     <ClCompile Include="Re\Graphics\Gui\Gui.cpp" />
     <ClCompile Include="Re\Graphics\Gui\GuiBase.cpp" />
     <ClCompile Include="Re\Graphics\Gui\GuiButton.cpp" />
@@ -293,6 +295,7 @@ $(SolutionDir)\External\Box2D-master\Box2D\Lib;%(AdditionalLibraryDirectories)
     <ClInclude Include="Re\Game\Efect\Graphical\EfectFollowCamera.h" />
     <ClInclude Include="Re\Game\Efect\Graphical\EfectGraphicsCircle.h" />
     <ClInclude Include="Re\Game\Efect\Graphical\EfectGraphicsRect.h" />
+    <ClInclude Include="Re\Game\Efect\Graphical\EfectModelPolygon.h" />
     <ClInclude Include="Re\Game\Efect\Graphical\EfectParticle.h" />
     <ClInclude Include="Re\Game\Efect\Health\EfectDamageOnCollision.h" />
     <ClInclude Include="Re\Game\Efect\Health\EfectHealth.h" />
@@ -327,6 +330,7 @@ $(SolutionDir)\External\Box2D-master\Box2D\Lib;%(AdditionalLibraryDirectories)
     <ClInclude Include="Re\Graphics\GraphicsAnimationController.h" />
     <ClInclude Include="Re\Graphics\GraphicsAnimationPart.h" />
     <ClInclude Include="Re\Graphics\GraphicsModelDef.h" />
+    <ClInclude Include="Re\Graphics\GraphicsModelPolygon.h" />
     <ClInclude Include="Re\Graphics\Gui\Gui.h" />
     <ClInclude Include="Re\Graphics\Gui\GuiBase.h" />
     <ClInclude Include="Re\Graphics\Gui\GuiButton.h" />

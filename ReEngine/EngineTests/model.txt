@@ -1,3 +1,26 @@
+<pointN = 6; layerN = 10; clR = 10; clB = 0; clG = 0; clA = 35; changeRadius = 25; cdChange = 0.1;
+posX0 = -30; posY0 = 150;
+posX1 = -50; posY1 = 75;
+posX2 = 0; posY2 = 0;
+posX3 = 50; posY3 = 75;
+posX4 = 30; posY4 = 150;
+posX5 = 0; posY5 = 100;
+>
+	<>
+	<\>
+<\>
+
+posX0 = 0; posY0 = -50;
+posX1 = -50; posY1 = 150;
+posX2 = -30; posY2 = 100;
+posX3 = 0; posY3 = 35;
+posX4 = 30; posY4 = 100;
+posX5 = 50; posY5 = 150;
+>
+<\>
+
+
+
 < rot = 0; ts = 0; scaleX = 0.45; scaleY = 0.45>
 	<ts =2; posY = 50; scaleY = 0.8; clR = 250; clG = 150; clB = 200><\>
 	<ts =1; clR = 250; clG = 150; clB = 200><\>

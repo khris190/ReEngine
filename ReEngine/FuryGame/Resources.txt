@@ -1,6 +1,7 @@
 < 
 	prepathGraphics =..\\Resources\\Graphics\\; 
 	prepathFont =..\\Resources\\Fonts\\;
+	prepathSound =..\\Resources\\Audio\\;
 >
 		
 	< type =texture; path =Terrain\\grass.png;		id =100>

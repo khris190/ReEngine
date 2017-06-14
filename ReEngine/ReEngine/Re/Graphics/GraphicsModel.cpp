@@ -4,7 +4,7 @@
 namespace Graphics
 {
 	Model::Model()
-		: myTexture(nullptr), parent(nullptr), lastDef(ModelDef::default)
+		: myTexture(nullptr), parent(nullptr), lastDef(ModelDef::default), ModelDef(ModelDef::default)
 	{
 	}
 

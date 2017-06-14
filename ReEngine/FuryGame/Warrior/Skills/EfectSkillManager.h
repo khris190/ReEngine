@@ -43,7 +43,7 @@ namespace Efect
 	class SkillManager : public Base
 	{
 	public:
-		typedef unsigned int Region;
+		typedef unsigned short Region;
 
 			/// struct for representing moves plyer can do
 			/// there is choosen first move that fits to actual start-end pattern

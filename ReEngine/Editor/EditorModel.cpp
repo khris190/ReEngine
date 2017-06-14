@@ -52,7 +52,7 @@ namespace Gui
 		///////////////////////////////////
 		partId->setMinMax(0, models.size(), 0);
 
-		//textureId->setMinMax(0, res.textures.size(), 0)->setProgress(getActual()->tsId);
+		textureId->setMinMax(0, 99999999999, 0);//->setProgress(getActual()->tsId);
 		
 		////////////// scale
 		auto inncreaseValueScale = []() { 

@@ -1,4 +1,7 @@
-< prepathGraphics =..\\Resources\\Graphics\\; prepathFont =..\\Resources\\Fonts\\>
+< prepathGraphics =..\\Resources\\Graphics\\; 
+	prepathFont =..\\Resources\\Fonts\\;
+	prepathSound =..\\Resources\\Audio\\;
+	>
 
 	< type =texture; path =Zero\\demon_head.png;	id =1>	
 	< type =texture; path =Zero\\demon_tail.png;	id =2>	

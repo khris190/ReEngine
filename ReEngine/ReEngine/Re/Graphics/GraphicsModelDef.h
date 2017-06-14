@@ -22,6 +22,7 @@ namespace Graphics
 		/// transforms taken as an argument sprite to fit to this modelDef; 
 		/// parametrs of sf::Sprite before has no influence (besides texture&origin data which are not overrided)
 		void update(sf::Sprite& toUpdate);
+		void update(ConvexShape& toUpdate);
 		void update(sf::Sprite& toUpdate, const ModelDef& parent) const;
 		ModelDef countOffset(const ModelDef& parent) const;
 

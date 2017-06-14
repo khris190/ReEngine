@@ -6,6 +6,7 @@
 
 /// models and parts
 #include <Re\Graphics\GraphicsModel.h>
+#include <Re\Graphics\GraphicsModelPolygon.h>
 #include <Re\Graphics\GraphicsAnimationController.h>
 #include <Re\Graphics\GraphicsAnimationPart.h>
 

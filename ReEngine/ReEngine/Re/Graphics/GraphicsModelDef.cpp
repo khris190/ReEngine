@@ -23,6 +23,20 @@ namespace Graphics
 			clamp(color.a, 0.f, 255.f)
 		));
 	}
+	void ModelDef::update(ConvexShape & toUpdate)
+	{
+		toUpdate.setPosition(posNoRot);
+		toUpdate.setRotation(rot.asDegree());
+		toUpdate.setScale(scale);
+
+		/// color is non depended on parent
+		toUpdate.setFillColor(sf::Color(
+			clamp(color.r, 0.f, 255.f),
+			clamp(color.g, 0.f, 255.f),
+			clamp(color.b, 0.f, 255.f),
+			clamp(color.a, 0.f, 255.f)
+		));
+	}
 	void ModelDef::update(sf::Sprite & toUpdate, const ModelDef& parent) const
 	{
 		countOffset(parent).update(toUpdate);

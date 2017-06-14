@@ -7,6 +7,7 @@
 namespace Graphics
 {
 	class AnimationPart;
+	class ModelPolygon;
 
 	class Model : 
 		public ModelDef,
@@ -89,7 +90,7 @@ namespace Graphics
 		}
 
 		Model* parent;
-	private:
+	protected:
 		/// Texture applied to sprite
 		/// Checking for texture in container at runtime can be a little bit slow
 		/// so hold adress of texture instead if id;
@@ -115,7 +116,7 @@ namespace Graphics
 
 		mutable ModelDef lastDef;
 
-	private: /// Double Tree data
+	protected: /// Double Tree data
 		/// DoubleTree is like standard tree but have two separated childrens
 		/// Those childrens describes the rendering order which is:
 		///		childs down(and their childrens)
@@ -144,7 +145,7 @@ namespace Graphics
 			/// Rendering order: first this one then siblings
 			sibling;
 		
-
+		friend ModelPolygon;
 	protected:
 		virtual void serialiseF(std::ostream& file, Res::DataScriptSaver& saver) const override;
 		virtual void deserialiseF(std::istream& file, Res::DataScriptLoader& loader) override;

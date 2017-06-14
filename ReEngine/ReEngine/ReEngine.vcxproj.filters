@@ -324,6 +324,12 @@
     <ClInclude Include="Re\Game\Efect\efectsSound.h">
       <Filter>Game\Efect</Filter>
     </ClInclude>
+    <ClInclude Include="Re\Graphics\GraphicsModelPolygon.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Re\Game\Efect\Graphical\EfectModelPolygon.h">
+      <Filter>Game\Efect\Graphical</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -640,6 +646,12 @@
     </ClCompile>
     <ClCompile Include="Re\Game\Efect\Sound\EffectSound.cpp">
       <Filter>Game\Efect\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Re\Graphics\GraphicsModelPolygon.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Re\Game\Efect\Graphical\EfectModelPolygon.cpp">
+      <Filter>Game\Efect\Graphical</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

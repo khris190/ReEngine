@@ -11,15 +11,24 @@ namespace Efect
 
 	void SkillShadowSpear::onInit()
 	{
-		getOwner()->addEfect(new Efect::Throw([=]() {return createBullet();  }))
+		auto efThrow = getOwner()->getEfect<Efect::Throw>();
+		if (!efThrow)
+			efThrow = getOwner()->addEfect(new Efect::Throw);
+
+		efThrow->addData(createBullet, [=]() { return isExecuting();  })
+			->setDataTransform(Vector2D(0, -175), Angle::zero)
+			->setDataLayer(Game::Layers::bullet);
+
+		//getOwner()->addEfect(new Efect::Sound(1))->setWhenPlaying([=]() {return isExecuting(); });
+
+		/*getOwner()->addEfect(new Efect::Throw([=]() {return createBullet();  }))
 			->setLayer(Game::Layers::bullet)
 			->setOffset(Vector2D(0, -175), Angle::zero)
-			->conditionToFire = [=]() { return isExecuting();  };
+			->conditionToFire = [=]() { return isExecuting();  };*/
 	}
 
 	bool SkillShadowSpear::execute()
 	{
-
 		return true;
 	}
 

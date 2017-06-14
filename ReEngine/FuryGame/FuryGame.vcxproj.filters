@@ -14,6 +14,9 @@
     <Filter Include="warrior\skills">
       <UniqueIdentifier>{2c1cecab-ebd6-4f34-a253-5ccdb52ac8ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Characters">
+      <UniqueIdentifier>{c5b33d58-dc5f-4356-ab97-ef1fb9ac3850}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FuryMain.cpp" />
@@ -33,6 +36,9 @@
     <ClCompile Include="Warrior\Skills\EfectSkillShadowSpear.cpp">
       <Filter>warrior\skills</Filter>
     </ClCompile>
+    <ClCompile Include="Characters\Zenon.cpp">
+      <Filter>Characters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Layers.h" />
@@ -50,6 +56,9 @@
     </ClInclude>
     <ClInclude Include="Warrior\Skills\EfectSkillShadowSpear.h">
       <Filter>warrior\skills</Filter>
+    </ClInclude>
+    <ClInclude Include="Characters\Zenon.h">
+      <Filter>Characters</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

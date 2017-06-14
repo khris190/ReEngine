@@ -4,36 +4,37 @@ extern RenderWindow wnd;
 
 namespace Efect
 {
-	Throw::Throw(function<Game::Actor*()> _createBullet, 
-		function<bool()> _conditionToFire)
-		: createBullet(_createBullet), conditionToFire(_conditionToFire)
+	Throw::Throw()
 	{
 	}
 
 	void Throw::onUpdate(sf::Time dt)
 	{
-		if (conditionToFire())
+		for (auto it : data)
 		{
-			auto bullet = createBullet();
-			if (bullet == nullptr)
-				return;
-			Game::world.addActor(bullet, getLayer() );
-
-			if (bullet->isRigidbodyCreated())
-				bullet->getRigidbody().SetTransform(
-		
-					bullet->getRigidbody().GetPosition() 
-					+ offset.getRotated(rotation + getOwner()->getRotation())*toB2Position
-					+ (Vector2D)getOwner()->getPosition()*toB2Position
-					,
-					bullet->getRigidbody().GetAngle()
-					+ getOwner()->getRotation().asRadian()
-				);
-			else
+			if (it.conditionToFire())
 			{
-				bullet->move(offset.getRotated(rotation + getOwner()->getRotation())
-					+ getOwner()->getPosition());
-				bullet->rotate(getOwner()->getRotation().asDegree());
+				auto bullet = it.createBullet();
+				if (bullet == nullptr)
+					return;
+				Game::world.addActor(bullet, it.getLayer());
+
+				if (bullet->isRigidbodyCreated())
+					bullet->getRigidbody().SetTransform(
+
+						bullet->getRigidbody().GetPosition()
+						+ it.offset.getRotated(it.rotation + getOwner()->getRotation())*toB2Position
+						+ (Vector2D)getOwner()->getPosition()*toB2Position
+						,
+						bullet->getRigidbody().GetAngle()
+						+ getOwner()->getRotation().asRadian()
+					);
+				else
+				{
+					bullet->move(it.offset.getRotated(it.rotation + getOwner()->getRotation())
+						+ getOwner()->getPosition());
+					bullet->rotate(getOwner()->getRotation().asDegree());
+				}
 			}
 		}
 	}
