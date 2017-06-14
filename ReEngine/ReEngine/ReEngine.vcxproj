@@ -208,6 +208,7 @@ $(SolutionDir)\External\Box2D-master\Box2D\Lib;%(AdditionalLibraryDirectories)
     <ClCompile Include="Re\Game\Efect\Physics\EfectRigidbody.cpp" />
     <ClCompile Include="Re\Game\Efect\Physics\EfectUpdateTransform.cpp" />
     <ClCompile Include="Re\Game\Efect\Sensor\EfectSensor.cpp" />
+    <ClCompile Include="Re\Game\Efect\Sound\EffectSound.cpp" />
     <ClCompile Include="Re\Game\GameActor.cpp" />
     <ClCompile Include="Re\Game\GameWorld.cpp" />
     <ClCompile Include="Re\Game\Network\NetworkBase.cpp" />
@@ -287,6 +288,7 @@ $(SolutionDir)\External\Box2D-master\Box2D\Lib;%(AdditionalLibraryDirectories)
     <ClInclude Include="Re\Game\Efect\efectsMovement.h" />
     <ClInclude Include="Re\Game\Efect\efectsPhysics.h" />
     <ClInclude Include="Re\Game\Efect\efectsSense.h" />
+    <ClInclude Include="Re\Game\Efect\efectsSound.h" />
     <ClInclude Include="Re\Game\Efect\Graphical\EfectAnimation.h" />
     <ClInclude Include="Re\Game\Efect\Graphical\EfectFollowCamera.h" />
     <ClInclude Include="Re\Game\Efect\Graphical\EfectGraphicsCircle.h" />
@@ -312,6 +314,7 @@ $(SolutionDir)\External\Box2D-master\Box2D\Lib;%(AdditionalLibraryDirectories)
     <ClInclude Include="Re\Game\Efect\Physics\EfectRigidbody.h" />
     <ClInclude Include="Re\Game\Efect\Physics\EfectUpdateTransform.h" />
     <ClInclude Include="Re\Game\Efect\Sensor\EfectSensor.h" />
+    <ClInclude Include="Re\Game\Efect\Sound\EffectSound.h" />
     <ClInclude Include="Re\Game\Game.h" />
     <ClInclude Include="Re\Game\GameActor.h" />
     <ClInclude Include="Re\Game\GameWorld.h" />

@@ -318,6 +318,12 @@
     <ClInclude Include="Re\Graphics\Gui\GuiNamedButton.h">
       <Filter>Graphics\Gui</Filter>
     </ClInclude>
+    <ClInclude Include="Re\Game\Efect\Sound\EffectSound.h">
+      <Filter>Game\Efect\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Re\Game\Efect\efectsSound.h">
+      <Filter>Game\Efect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -412,6 +418,9 @@
     </Filter>
     <Filter Include="Game\Network">
       <UniqueIdentifier>{e6cd2c69-892f-49c8-b913-cd4531e75dc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Efect\Sound">
+      <UniqueIdentifier>{37bf0786-9743-4adf-8b14-69f984bcec99}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -628,6 +637,9 @@
     </ClCompile>
     <ClCompile Include="Re\Graphics\Gui\GuiNamedButton.cpp">
       <Filter>Graphics\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Re\Game\Efect\Sound\EffectSound.cpp">
+      <Filter>Game\Efect\Sound</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
